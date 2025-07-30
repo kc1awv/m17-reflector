@@ -12,7 +12,7 @@ document.addEventListener("reflectorUpdate", (e) => {
         m.clients,
         m.active_streams > 0
             ? `<span class="tag is-success">Active</span>`
-            : `<span class="tag is-dark">Inactive</span>`
+            : `<span class="tag is-dark">Idle</span>`
     ]);
 
     updateTable('activeStreamsTable', s.active_streams, a => [

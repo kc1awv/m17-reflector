@@ -25,7 +25,7 @@ document.addEventListener("reflectorUpdate", (e) => {
         } else {
             moduleStatusTag = mod.active_streams > 0
                 ? `<span class="tag is-success">Active</span>`
-                : `<span class="tag is-dark">Inactive</span>`;
+                : `<span class="tag is-dark">Idle</span>`;
         }
 
         const col = document.createElement("div");
