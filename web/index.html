@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M17 Reflector Dashboard - Overview</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+
+<body>
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" id="reflectorTitle" href="index.html">M17 Dashboard</a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.html">Overview</a>
+                <a class="navbar-item" href="modules.html">Modules & Clients</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">Theme</a>
+                    <div class="navbar-dropdown is-right">
+                        <a class="navbar-item theme-option" data-theme="auto">Automatic</a>
+                        <a class="navbar-item theme-option" data-theme="light">Light</a>
+                        <a class="navbar-item theme-option" data-theme="dark">Dark</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <div class="box">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column">
+                        <p class="heading">Uptime</p>
+                        <p id="uptime" class="title is-4">-</p>
+                    </div>
+                    <div class="column">
+                        <p class="heading">Total Clients</p>
+                        <p id="totalClients" class="title is-4">-</p>
+                    </div>
+                    <div class="column">
+                        <p class="heading">Active Streams</p>
+                        <p id="totalStreams" class="title is-4">-</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-two-thirds">
+                    <h2 class="subtitle">Active Streams</h2>
+                    <table class="table is-striped is-fullwidth" id="activeStreamsTable">
+                        <thead>
+                            <tr>
+                                <th>Source</th>
+                                <th>Peer</th>
+                                <th>Destination</th>
+                                <th>Module</th>
+                                <th>Stream ID</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <h2 class="subtitle">Last Heard</h2>
+                    <table class="table is-striped is-fullwidth" id="recentStreamsTable">
+                        <thead>
+                            <tr>
+                                <th>Source</th>
+                                <th>Peer</th>
+                                <th>Destination</th>
+                                <th>Module</th>
+                                <th>Last Heard At</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="column is-one-third">
+                    <h2 class="subtitle">Modules</h2>
+                    <table class="table is-striped is-fullwidth" id="modulesTable">
+                        <thead>
+                            <tr>
+                                <th>Module</th>
+                                <th>Clients</th>
+                                <th>Active?</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="static/js/common.js"></script>
+    <script src="static/js/index.js"></script>
+</body>
+
+</html>

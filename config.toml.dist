@@ -1,0 +1,10 @@
+reflector_name = "M17-123"
+bind_address = "0.0.0.0:17000"
+modules = ["A", "B", "C", "D"]
+strict_crc = false
+
+# Example interlink configuration
+# [[interlinks]]
+# name = "M17-456"
+# address = "1.2.3.4:17000"
+# modules = ["A"]

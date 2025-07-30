@@ -1,0 +1,14 @@
+[Unit]
+Description=M17 Reflector service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/m17_reflector --config /etc/m17-reflector/config.toml
+Restart=on-failure
+User=m17
+Group=m17
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target
