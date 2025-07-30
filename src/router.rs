@@ -68,7 +68,8 @@ pub async fn route_stream_packet(
     }
 
     let reflector_call = format!("{} {}", reflector_name, sender_module);
-    let is_broadcast = stream.dst == "BROADCAST" || stream.dst == reflector_call;
+    let is_broadcast = 
+        stream.dst == "BROADCAST" || stream.dst == "ALL" || stream.dst == reflector_call;
 
     if let Some(peer) = r.find_peer_mut(&addr) {
         peer.increment_rx(data.len());
