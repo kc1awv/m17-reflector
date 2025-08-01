@@ -25,6 +25,7 @@ pub struct StreamInfo {
     pub peer: SocketAddr,
     pub frames: u32,
     pub is_broadcast: bool,
+    pub last_frame: Instant,
     pub end_time: Option<Instant>,
 }
 
@@ -133,6 +134,7 @@ impl Reflector {
                     destination: destination.to_string(),
                     module,
                     start_time: Instant::now(),
+                    last_frame: Instant::now(),
                     peer_callsign: self
                         .find_peer(&peer)
                         .map(|p| p.callsign.clone())
@@ -147,6 +149,7 @@ impl Reflector {
         } else {
             if let Some(entry) = self.active_streams.get_mut(&stream_id) {
                 entry.frames += 1;
+                entry.last_frame = Instant::now();
             }
             true
         }
@@ -168,6 +171,7 @@ impl Reflector {
                 peer: info.peer,
                 start_time: info.start_time,
                 frames: info.frames,
+                last_frame: info.last_frame,
                 is_broadcast: info.is_broadcast,
                 end_time: Some(Instant::now()),
             });
